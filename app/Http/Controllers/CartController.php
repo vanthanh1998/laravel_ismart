@@ -12,6 +12,7 @@ use App\Bill;
 use App\Bill_detail;
 use Yajra\DataTables\DataTables;
 use Validator;
+use App\Mail\CheckoutEmail;
 
 
 class CartController extends Controller
@@ -64,12 +65,12 @@ class CartController extends Controller
     }
 
     public function getcheckout(){
-      $user = User::where('id',Auth::user()->id)->first()->toArray();
-      $cart = Cart::content();
+        $user = User::where('id',Auth::user()->id)->first()->toArray();
+        $cart = Cart::content();
     	return view('pages.cart.checkout',compact('user','cart'));
     }
     public function postcheckout(Request $request){
-        $cart_detail=Cart::content();
+        $cart_detail = Cart::content();
         $rules = [
             'fullname'=>'required',
             'email' => 'required|email',
@@ -100,6 +101,7 @@ class CartController extends Controller
                 $bill->address = $request->address;
                 $bill->email = $request->email;
                 $bill->note = $request->note;
+                $bill->total_bill = str_replace(',', '', Cart::subtotal());
                 $bill->status = 0;
                 $bill->save();
                 foreach($cart_detail as $item){
@@ -120,12 +122,8 @@ class CartController extends Controller
                 // thông tin ngdung
                 $data['info'] = ['fullname'=> $request->fullname,'email'=>$request->email,'phone'=>$request->phone,'address'=>$request->address,'note'=>$request->note];
 
-                $email =$request->email;
-
-                Mail::send('emails.checkout_email',$data,function($message) use ($email){
-                  $message->from('thanhchonthanh@gmail.com','ThanhRain');
-                  $message->to($email,'Duyên')->subject('Xác nhận hóa đơn mua hàng Ismart');
-                });
+                $email = $request->email;
+                Mail::to("vanthanh0610998@gmail.com")->send(new CheckoutEmail($data['info']));
                 Cart::destroy();
                 return response()->json([
                     'error' => false,

@@ -1,25 +1,25 @@
 <div>
 	<h3>Thông tin khách hàng</h3>
-	<p>
+	{{-- <p>
 		<strong class="info">Khách hàng: </strong>
-		{{$info['fullname']}}
+		{{$data['fullname']}}
 	</p>
 	<p>
 		<strong class="info">Email: </strong>
-		{{$info['email']}}
+		{{$data['email']}}
 	</p>
 	<p>
 		<strong class="info">Điện Thoại</strong>
-		{{$info['phone']}}
+		{{$data['phone']}}
 	</p>
 	<p>
 		<strong class="info">Địa chỉ</strong>
-		{{$info['address']}}
+		{{$data['address']}}
 	</p>
 	<p>
 		<strong class="info">Ghi chú</strong>
-		{{$info['note']}}
-	</p>
+		{{$data['note']}}
+	</p> --}}
 
 </div>
     <div class="form-group">
