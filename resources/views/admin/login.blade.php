@@ -2,11 +2,11 @@
     <head>
         <title>Trang đăng nhập</title>
 {{--        <meta name="csrf-token" content="{{ custom_csrf_token() }}">--}}
-        <link rel="stylesheet" type="text/css" href="{{ url('public/admin/css/import/login.css') }}">
-        <link href="{{ url('public/admin/css/bootstrap/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
-        <link href="{{ url('public/admin/css/bootstrap/bootstrap-theme.min.css') }}" rel="stylesheet" type="text/css"/>
-        <script src="{{ url('public/admin/js/jquery-2.2.4.min.js') }}" type="text/javascript"></script>
-        <script src="{{ url('public/admin/js/bootstrap/bootstrap.min.js') }}" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="{{ url('admin/css/import/login.css') }}">
+        <link href="{{ url('admin/css/bootstrap/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
+        <link href="{{ url('admin/css/bootstrap/bootstrap-theme.min.css') }}" rel="stylesheet" type="text/css"/>
+        <script src="{{ url('admin/js/jquery-2.2.4.min.js') }}" type="text/javascript"></script>
+        <script src="{{ url('admin/js/bootstrap/bootstrap.min.js') }}" type="text/javascript"></script>
     </head>
     <body>
         <form id="login_admin_form" class="box" method="post">

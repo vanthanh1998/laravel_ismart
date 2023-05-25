@@ -29,7 +29,7 @@ class UserController extends Controller
                     return '<input type="checkbox" data-id="'.$users->id.'" name="checkItem[]" class="delete_checkbox">';
                 })
                 ->addColumn('avatar', function ($users) {
-                    $url = asset("resources/upload/user/$users->avatar");
+                    $url = asset("public/upload/user/$users->avatar");
                     return '<img src='.$url.' border="0"  class="img-rounded" align="center" />';
                 })
                 ->addColumn('status', function ($users) {
@@ -76,12 +76,12 @@ class UserController extends Controller
     	$user->address = $request->address;
     	$user->gender = $request->sltgender;
 
-    	$img_current = 'resources/upload/user/'.$request->img_current;// tạo
+    	$img_current = 'public/upload/user/'.$request->img_current;// tạo
     	if(!empty($request->file('fimage'))){
     		$file = $request->file('fimage');
     		$file_name = $file->getClientOriginalName();
     		$user->avatar = $file_name;
-    		$file->move('resources/upload/user/',$file_name);
+    		$file->move('public/upload/user/',$file_name);
     		if(File::exists($img_current)){
     			File::delete($img_current);
     		}
@@ -93,7 +93,7 @@ class UserController extends Controller
     }
     public function get_delete($id){
     	$user = user::find($id);
-        File::delete('resources/upload/user/'.$user['avatar']);
+        File::delete('public/upload/user/'.$user['avatar']);
         $user->delete($id);
         return response()->json([
             'success' => true,
@@ -105,7 +105,7 @@ class UserController extends Controller
         $array = $request->input('id');
         $user = User::whereIn('id', $array);
         foreach($user as $image){
-            File::delete('resources/upload/user/'.$image['avatar']);// xóa hình trong list_image
+            File::delete('public/upload/user/'.$image['avatar']);// xóa hình trong list_image
         }
         $user->delete();
         return response()->json([

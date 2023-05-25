@@ -8,37 +8,37 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 
-    <link href="<?php echo url('public/reset.css'); ?>" rel="stylesheet" type="text/css"/>
-    <link href="<?php echo url('public/css/carousel/owl.carousel.css'); ?>" rel="stylesheet" type="text/css"/>
-    <link href="<?php echo url('public/css/carousel/owl.theme.css'); ?>" rel="stylesheet" type="text/css"/>
-    <link href="<?php echo url('public/css/font-awesome/css/font-awesome.min.css'); ?>" rel="stylesheet" type="text/css"/>
-    <link href="<?php echo url('public/css/import/blog.css'); ?>" rel="stylesheet" type="text/css"/>
-    <link href="<?php echo url('public/css/import/fonts.css'); ?>" rel="stylesheet" type="text/css"/>
-    <link href="<?php echo url('public/css/import/footer.css'); ?>" rel="stylesheet" type="text/css"/>
-    <link href="<?php echo url('public/css/import/global.css'); ?>" rel="stylesheet" type="text/css"/>
-    <link href="<?php echo url('public/css/import/header.css'); ?>" rel="stylesheet" type="text/css"/>
-    <link href="<?php echo url('public/css/import/category_product.css'); ?>" rel="stylesheet" type="text/css"/>
-    <link href="<?php echo url('public/css/import/login.css'); ?>" rel="stylesheet" type="text/css"/>
-    <link href="<?php echo url('public/toastr/toastr.min.css'); ?>" rel="stylesheet" type="text/css"/>
-    <link href="<?php echo url('public/responsive_history.css'); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo url('reset.css'); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo url('css/carousel/owl.carousel.css'); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo url('css/carousel/owl.theme.css'); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo url('css/font-awesome/css/font-awesome.min.css'); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo url('css/import/blog.css'); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo url('css/import/fonts.css'); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo url('css/import/footer.css'); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo url('css/import/global.css'); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo url('css/import/header.css'); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo url('css/import/category_product.css'); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo url('css/import/login.css'); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo url('toastr/toastr.min.css'); ?>" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo url('responsive_history.css'); ?>" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
 
-    <link rel="stylesheet" href="<?php echo url('public/js/sweetalert/sweetalert2.min.css'); ?>">
-    <script src="<?php echo url('public/js/sweetalert/sweetalert2.all.min.js'); ?>"></script>
+    <link rel="stylesheet" href="<?php echo url('js/sweetalert/sweetalert2.min.css'); ?>">
+    <script src="<?php echo url('js/sweetalert/sweetalert2.all.min.js'); ?>"></script>
 
-    <script src="<?php echo url('public/js/jquery-2.2.4.min.js'); ?>" type="text/javascript"></script>
-    <script src="<?php echo url('public/toastr/toastr.min.js'); ?>" type="text/javascript"></script>
-    <script src="<?php echo url('public/js/elevatezoom-master/jquery.elevatezoom.js'); ?>" type="text/javascript"></script>
+    <script src="<?php echo url('js/jquery-2.2.4.min.js'); ?>" type="text/javascript"></script>
+    <script src="<?php echo url('toastr/toastr.min.js'); ?>" type="text/javascript"></script>
+    <script src="<?php echo url('js/elevatezoom-master/jquery.elevatezoom.js'); ?>" type="text/javascript"></script>
     
     <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-    <script src="<?php echo url('public/js/carousel/owl.carousel.js'); ?>" type="text/javascript"></script>
-    <script src="<?php echo url('public/js/validateEngine/jquery.validationEngine.min.js'); ?>" type="text/javascript"></script>
-    <script src="<?php echo url('public/js/validateEngine/jquery.validationEngine-en.min.js'); ?>" type="text/javascript"></script>
+    <script src="<?php echo url('js/carousel/owl.carousel.js'); ?>" type="text/javascript"></script>
+    <script src="<?php echo url('js/validateEngine/jquery.validationEngine.min.js'); ?>" type="text/javascript"></script>
+    <script src="<?php echo url('js/validateEngine/jquery.validationEngine-en.min.js'); ?>" type="text/javascript"></script>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.3"></script>
 
 </head>
@@ -216,4 +216,4 @@
     
 </script>
 
-<?php /**PATH G:\xampp_7\htdocs\ismart\resources\views/pages/history/lichsugiaodich.blade.php ENDPATH**/ ?>
+<?php /**PATH D:\xampp\htdocs\laravel_ismart\resources\views/pages/history/lichsugiaodich.blade.php ENDPATH**/ ?>

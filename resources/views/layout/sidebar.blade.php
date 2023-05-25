@@ -48,7 +48,7 @@
                             <p class="<?php echo $labelnew; ?>">
                             </p>
                             <a href="{!! url('ctsp',[$item->id,$item->alias]) !!}" title="" class="thumb fl-left">
-                                <img src="{{ asset('resources/upload/product/'.$item->image) }}" alt="">
+                                <img src="{{ asset('upload/product/'.$item->image) }}" alt="">
                             </a>
                             <div class="info fl-right">
                                 <a href="{!! url('ctsp',[$item->id,$item->alias]) !!}" title="" class="product-name">{!! $item->product_name !!}</a>
@@ -68,7 +68,7 @@
 {{--            <div class="section" id="banner-wp">--}}
 {{--                <div class="section-detail">--}}
 {{--                    <a href="" title="" class="thumb">--}}
-{{--                        <img src="{{ asset('public/images/banner.png') }}" alt="">--}}
+{{--                        <img src="{{ asset('images/banner.png') }}" alt="">--}}
 {{--                    </a>--}}
 {{--                </div>--}}
 {{--            </div>--}}

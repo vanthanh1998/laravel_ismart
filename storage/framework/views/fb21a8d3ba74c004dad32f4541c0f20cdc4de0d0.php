@@ -84,7 +84,7 @@
                     </div>
                     <div id="head-body" class="clearfix">
                         <div class="wp-inner">
-                            <a href="<?php echo e(url('/')); ?>" title="" id="logo" class="fl-left"><img src="<?php echo url('public/images/logo.png'); ?>"/></a>
+                            <a href="<?php echo e(url('/')); ?>" title="" id="logo" class="fl-left"><img src="<?php echo url('images/logo.png'); ?>"/></a>
                             <div id="search-wp" class="fl-left">
                                 <form method="GET" action="<?php echo e(url('search')); ?>">
                                     <?php echo csrf_field(); ?>
@@ -116,7 +116,7 @@
                                             <?php $__currentLoopData = $cart; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                             <li class="clearfix">
                                                 <a href="" title="" class="thumb fl-left">
-                                                    <img src="<?php echo e(asset('resources/upload/product/'.$item->options->img)); ?>" alt="">
+                                                    <img src="<?php echo e(asset('upload/product/'.$item->options->img)); ?>" alt="">
                                                 </a>
                                                 <div class="info fl-right">
                                                     <a href="" title="" class="product-name"><?php echo $item->name; ?></a>

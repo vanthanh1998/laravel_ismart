@@ -241,7 +241,7 @@
                         </div>
                         @if(Auth::user()->avatar != 0)
                         <div class="img">
-                            <img style="width: 100px!important;height: 75px!important;" src="{{ asset('resources/upload/user/'.Auth::user()->avatar) }}" alt="">
+                            <img style="width: 100px!important;height: 75px!important;" src="{{ asset('upload/user/'.Auth::user()->avatar) }}" alt="">
                         </div><br>
                         @else
                         @endif

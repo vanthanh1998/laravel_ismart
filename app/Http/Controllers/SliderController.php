@@ -28,7 +28,7 @@ class SliderController extends Controller
                     return '<input type="checkbox" data-id="'.$slider->id.'" name="checkItem[]" class="delete_checkbox">';
                 })
                 ->addColumn('image', function ($slider) {
-                    $url = asset("resources/upload/slider/$slider->image");
+                    $url = asset("public/upload/slider/$slider->image");
                     return '<img src='.$url.' border="0"  class="img-rounded" align="center" />';
                 })
                 ->addColumn('status', function ($slider) {
@@ -61,7 +61,7 @@ class SliderController extends Controller
     	$slider->image = $file_name;
     	$slider->admin_id = get_data_user('admin');
     	// upload image
-    	$file->move('resources/upload/slider/',$file_name);
+    	$file->move('public/upload/slider/',$file_name);
     	$slider->save();
     	return redirect()->route('get.list.slider')->with('success','Thêm mới slider thành công');
     }
@@ -78,13 +78,13 @@ class SliderController extends Controller
     	$slider = Slider::find($id);
     	$slider->name  = $request->name;
 
-    	$img_current = 'resources/upload/slider/'.$request->img_current;// tạo input hidden có name là img_current~~~ nhu7 là thư mục chưa image
-        // echo $img_current;// ~~ resources/upload/midu.jpg
+    	$img_current = 'public/upload/slider/'.$request->img_current;// tạo input hidden có name là img_current~~~ nhu7 là thư mục chưa image
+        // echo $img_current;// ~~ public/upload/midu.jpg
         if(!empty($request->file('fimage'))){
             $file = $request->file('fimage'); // lấy file image
             $file_name = $file->getClientOriginalName();
             $slider->image= $file_name;
-            $file ->move('resources/upload/slider/',$file_name);
+            $file ->move('public/upload/slider/',$file_name);
             if(File::exists($img_current)){
                 File::delete($img_current);
             }
@@ -97,7 +97,7 @@ class SliderController extends Controller
     }
     public function get_delete($id){
     	$slider = Slider::find($id);
-        File::delete('resources/upload/slider/'.$slider['image']);
+        File::delete('public/upload/slider/'.$slider['image']);
     	$slider->delete($id);
     	return response()->json([
     	    'success' => true,
@@ -109,7 +109,7 @@ class SliderController extends Controller
         $array = $request->input('id');
         $slider = Slider::whereIn('id', $array);
         foreach($slider as $image){
-            File::delete('resources/upload/slider/'.$image['image']);// xóa hình trong list_image
+            File::delete('public/upload/slider/'.$image['image']);// xóa hình trong list_image
         }
         $slider->delete();
         return response()->json([

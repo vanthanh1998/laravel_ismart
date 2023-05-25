@@ -5,7 +5,7 @@
             min-height: 100%;
         }
         body{
-            background-image: url('{{ asset('public/images/544750.jpg') }}');
+            background-image: url('{{ asset('images/544750.jpg') }}');
             background-size: cover;
             background-repeat: no-repeat;
             height: 100%;

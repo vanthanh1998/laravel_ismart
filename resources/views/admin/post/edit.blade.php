@@ -48,7 +48,7 @@
                                 <span class="error">{!! $errors->first('fimage') !!}</span>
                             </div>
                             <div class="form-group">
-                                <img style="width: 100px;height: auto;" src="{{ asset('resources/upload/post/'.$post['image']) }}">
+                                <img style="width: 100px;height: auto;" src="{{ asset('upload/post/'.$post['image']) }}">
                             </div>
 
                             <div class="form-group">

@@ -30,7 +30,7 @@
                                 <p class="<?php echo $labelnew; ?>">
                                 </p>
                                 <a href="{!! url('ctsp',[$item->id,$item->alias]) !!}" title="" class="thumb">
-                                    <img src="{{ asset('resources/upload/product/'.$item->image) }}">
+                                    <img src="{{ asset('upload/product/'.$item->image) }}">
                                 </a>
                                 <a href="{!! url('ctsp',[$item->id,$item->alias]) !!}" title="" class="product-name">{!! $item->product_name !!}</a>
                                 <div class="price">

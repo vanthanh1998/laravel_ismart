@@ -35,7 +35,7 @@
                                     <td><?php echo $item->id; ?></td>
                                     <td>
                                         <a href="" title="" class="thumb" style="display: inline-block;width: 100px;min-height: 100px;overflow: hidden;border: 1px solid #ccc;">
-                                            <img src="<?php echo e(asset('resources/upload/product/'.$item->options->img)); ?>" alt="">
+                                            <img src="<?php echo e(asset('upload/product/'.$item->options->img)); ?>" alt="">
                                         </a>
                                     </td>
                                     <td>
@@ -184,4 +184,4 @@
         }
     </script>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layout.index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH G:\xampp_7\htdocs\ismart\resources\views/pages/cart/giohang.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layout.index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\xampp\htdocs\laravel_ismart\resources\views/pages/cart/giohang.blade.php ENDPATH**/ ?>

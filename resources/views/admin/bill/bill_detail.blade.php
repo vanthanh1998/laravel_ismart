@@ -108,7 +108,7 @@
                                             <td width="5%" class="thead-text">{!! $stt !!}</td>
                                             <td width="10%" class="thead-text">
                                                 <div class="thumb" style="display: inline-block;width: 100px;min-height: 100px;overflow: hidden;">
-                                                    <img style="width: 100px;height: 100px;" src="{{ asset('resources/upload/product/'.$item['image']) }}" alt="">
+                                                    <img style="width: 100px;height: 100px;" src="{{ asset('upload/product/'.$item['image']) }}" alt="">
                                                 </div>
                                             </td>
                                             <td width="40%" class="thead-text">{!! $item['product_name'] !!}</td>

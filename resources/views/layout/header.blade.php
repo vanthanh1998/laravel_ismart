@@ -84,7 +84,7 @@
                     </div>
                     <div id="head-body" class="clearfix">
                         <div class="wp-inner">
-                            <a href="{{ url('/') }}" title="" id="logo" class="fl-left"><img src="{!! url('public/images/logo.png') !!}"/></a>
+                            <a href="{{ url('/') }}" title="" id="logo" class="fl-left"><img src="{!! url('images/logo.png') !!}"/></a>
                             <div id="search-wp" class="fl-left">
                                 <form method="GET" action="{{ url('search') }}">
                                     @csrf
@@ -116,7 +116,7 @@
                                             @foreach($cart as $item)
                                             <li class="clearfix">
                                                 <a href="" title="" class="thumb fl-left">
-                                                    <img src="{{asset('resources/upload/product/'.$item->options->img)}}" alt="">
+                                                    <img src="{{asset('upload/product/'.$item->options->img)}}" alt="">
                                                 </a>
                                                 <div class="info fl-right">
                                                     <a href="" title="" class="product-name">{!! $item->name !!}</a>

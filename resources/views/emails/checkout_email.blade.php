@@ -39,7 +39,7 @@
 	        <tbody>
 	            <tr>
 	                <td>{{$item->name}}</td>
-					<td><img style="width: 100px;height: auto;" src="{{$message->embed(asset('resources/upload/product/'.$item->options->img))}}" alt="" /></td>
+					<td><img style="width: 100px;height: auto;" src="{{$message->embed(asset('upload/product/'.$item->options->img))}}" alt="" /></td>
 	                <td>{{number_format($item->price)}} đ</td>
 	                <td>{{$item->qty}}</td>
 	                <td>{{number_format($item->qty * $item->price) }} đ</td>

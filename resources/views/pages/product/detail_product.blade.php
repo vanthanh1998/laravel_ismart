@@ -31,20 +31,20 @@
                 <div class="section-detail clearfix">
                     <div class="thumb-wp fl-left">
                         <a href="" id="main-thumb" class="clearfix">
-                            <div style="height:356px;width:356px;" class="zoomWrapper"><img id="zoom" src="{{ asset('resources/upload/product/'.$ctsp['image']) }}" data-zoom-image="{{ asset('resources/upload/product/'.$ctsp['image']) }}" style="position: absolute;"></div>
+                            <div style="height:356px;width:356px;" class="zoomWrapper"><img id="zoom" src="{{ asset('upload/product/'.$ctsp['image']) }}" data-zoom-image="{{ asset('upload/product/'.$ctsp['image']) }}" style="position: absolute;"></div>
                         </a>
                         <div id="list-thumb">
                             @if(isset($list_image))
                             @foreach($list_image as $item)
-                            <a href="" data-image="{{ asset('resources/upload/product_detail/'.$item['image']) }}" data-zoom-image="{{ asset('resources/upload/product_detail/'.$item['image']) }}">
-                                <img id="zoom-img" src="{{ asset('resources/upload/product_detail/'.$item['image']) }}" />
+                            <a href="" data-image="{{ asset('upload/product_detail/'.$item['image']) }}" data-zoom-image="{{ asset('upload/product_detail/'.$item['image']) }}">
+                                <img id="zoom-img" src="{{ asset('upload/product_detail/'.$item['image']) }}" />
                             </a>
                             @endforeach
                             @endif
                         </div>
                     </div>
                     <div class="thumb-respon-wp fl-left">
-                        <img src="{{ asset('resources/upload/product/'.$ctsp['image']) }}" alt="">
+                        <img src="{{ asset('upload/product/'.$ctsp['image']) }}" alt="">
                     </div>
                     <div class="info fl-right">
                         <h3 class="product-name">{!! $ctsp['product_name'] !!}</h3>
@@ -209,7 +209,7 @@
                             <p class="<?php echo $labelnew; ?>">
                             </p>
                             <a href="{!! url('ctsp',[$item['id'],$item['alias']]) !!}" title="" class="thumb">
-                                <img src="{{ asset('resources/upload/product/'.$item['image']) }}">
+                                <img src="{{ asset('upload/product/'.$item['image']) }}">
                             </a>
                             <a href="{!! url('ctsp',[$item['id'],$item['alias']]) !!}" title="" class="product-name">{!! $item['product_name'] !!}</a>
                             <div class="price">

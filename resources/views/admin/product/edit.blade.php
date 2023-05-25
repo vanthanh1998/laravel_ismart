@@ -48,7 +48,7 @@
                                     <span class="error">{!! $errors->first('fimage') !!}</span>
                                 </div>
                                 <div class="form-group">
-                                    <img style="width: 100px;height: auto;" src="{{ asset('resources/upload/product/'.$product['image']) }}">
+                                    <img style="width: 100px;height: auto;" src="{{ asset('upload/product/'.$product['image']) }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="desc">Mô tả ngắn</label>
@@ -77,7 +77,7 @@
                                     <div id="uploadFile">
                                         @foreach($list_image as $key => $item)
                                             <div class="form-group" id="{!! $key !!}">
-                                                <img style="width: 100px; height: 100px;" src="{!! asset('resources/upload/product_detail/'.$item['image']) !!}" idHinh = "{!! $item['id'] !!}" id="{!! $key !!}">
+                                                <img style="width: 100px; height: 100px;" src="{!! asset('upload/product_detail/'.$item['image']) !!}" idHinh = "{!! $item['id'] !!}" id="{!! $key !!}">
                                                 <a href="javascript:void(0)" type="button" id="del_img_demo" class="btn btn-danger btn-circle icon_del"><i class="fa fa-times"></i></a>
                                             </div>
                                         @endforeach

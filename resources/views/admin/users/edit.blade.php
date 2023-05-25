@@ -41,7 +41,7 @@
                             <input type="hidden" name="img_current" value="{!! $user['avatar'] !!}">
                         </div>
                         <div class="form-group">
-                            <img style="width: 100px; height: 100px" src="{{ asset('resources/upload/user/'.$user['avatar']) }}">
+                            <img style="width: 100px; height: 100px" src="{{ asset('upload/user/'.$user['avatar']) }}">
                         </div>
                         <div class="form-group">
                             <label for="tel">Số điện thoại</label>

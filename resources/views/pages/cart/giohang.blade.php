@@ -36,7 +36,7 @@
                                     <td>{!! $item->id !!}</td>
                                     <td>
                                         <a href="" title="" class="thumb" style="display: inline-block;width: 100px;min-height: 100px;overflow: hidden;border: 1px solid #ccc;">
-                                            <img src="{{asset('resources/upload/product/'.$item->options->img)}}" alt="">
+                                            <img src="{{asset('upload/product/'.$item->options->img)}}" alt="">
                                         </a>
                                     </td>
                                     <td>

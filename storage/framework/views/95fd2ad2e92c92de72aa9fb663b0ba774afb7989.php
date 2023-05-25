@@ -2,7 +2,7 @@
 
 <style type="text/css">
     body{
-        background-image: url('<?php echo e(asset('public/images/544750.jpg')); ?>');
+        background-image: url('<?php echo e(asset('images/544750.jpg')); ?>');
         background-size: cover;
         background-repeat: no-repeat;
         height: 100%;
@@ -100,4 +100,4 @@
 </div>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layout.index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH G:\xampp_7\htdocs\ismart\resources\views/pages/user/login.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layout.index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\xampp\htdocs\laravel_ismart\resources\views/pages/user/login.blade.php ENDPATH**/ ?>

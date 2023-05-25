@@ -2,7 +2,7 @@
     <div class="profile-sidebar">
         <!-- SIDEBAR USERPIC -->
         <div class="profile-userpic">
-            <img src="{{ asset('resources/upload/user/'.Auth::user()['avatar']) }}" class="img-responsive" alt="">
+            <img src="{{ asset('upload/user/'.Auth::user()['avatar']) }}" class="img-responsive" alt="">
         </div>
         <!-- END SIDEBAR USERPIC -->
         <!-- SIDEBAR USER TITLE -->

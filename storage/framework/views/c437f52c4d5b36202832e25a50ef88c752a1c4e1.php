@@ -48,7 +48,7 @@
                             <p class="<?php echo $labelnew; ?>">
                             </p>
                             <a href="<?php echo url('ctsp',[$item->id,$item->alias]); ?>" title="" class="thumb fl-left">
-                                <img src="<?php echo e(asset('resources/upload/product/'.$item->image)); ?>" alt="">
+                                <img src="<?php echo e(asset('upload/product/'.$item->image)); ?>" alt="">
                             </a>
                             <div class="info fl-right">
                                 <a href="<?php echo url('ctsp',[$item->id,$item->alias]); ?>" title="" class="product-name"><?php echo $item->product_name; ?></a>

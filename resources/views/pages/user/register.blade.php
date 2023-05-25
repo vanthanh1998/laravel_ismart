@@ -2,7 +2,7 @@
 @section('content')
     <style type="text/css">
         body{
-            background-image: url('{{ asset('public/images/544750.jpg') }}');
+            background-image: url('{{ asset('images/544750.jpg') }}');
             background-size: cover;
             background-repeat: no-repeat;
             height: 100%;
@@ -166,7 +166,7 @@
                 </div>
                 <div class="captcha_icon_refresh">
                     <a href="javascript:void(0);" onclick="refreshCaptcha()" id="captcha_refresh">
-                        <img class="icon_refresh" src="{{ asset('public/images/refresh.png') }}">
+                        <img class="icon_refresh" src="{{ asset('images/refresh.png') }}">
                     </a>
                 </div>
             </div>

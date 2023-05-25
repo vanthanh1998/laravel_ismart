@@ -43,7 +43,7 @@
                             <input type="hidden" name="img_current" value="{!! $admin['avatar'] !!}">
                         </div>
                         <div id="show_list_file" class="clearfix" >
-                            <img src="{{ asset('resources/upload/admin/'.$admin['avatar']) }}">
+                            <img src="{{ asset('upload/admin/'.$admin['avatar']) }}">
                         </div><br>
                         <label for="tel">Số điện thoại</label>
                         <input type="text" pattern="(0[3|7|9|8|5])+([0-9]{8})\b" maxlength="10" required="required" value="{!! old('phone'),$admin['phone'] !!}" name="phone" id="tel">

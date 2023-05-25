@@ -24,7 +24,7 @@
                         @foreach($post as $item)
                         <li class="clearfix">
                             <a href="{!! url('chi-tiet-bai-viet',[$item['id'],$item['alias']]) !!}" title="" class="thumb fl-left">
-                                <img src="{{ asset('resources/upload/post/'.$item['image']) }}" alt="">
+                                <img src="{{ asset('upload/post/'.$item['image']) }}" alt="">
                             </a>
                             <div class="info fl-right">
                                 <a href="?page=detail_blog" title="" class="title">{!! $item['desc'] !!}</a>

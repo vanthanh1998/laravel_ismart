@@ -30,7 +30,7 @@ class AdminController extends Controller
     	$admin->address = $request->address;
     	$admin->gender = $request->sltgender;
     	//upload file
-    	$file->move('resources/upload/admin/',$file_name);
+    	$file->move('/upload/admin/',$file_name);
     	$admin->save();
     	return redirect()->back()->with('success','Thêm thành công');
     }
@@ -46,13 +46,13 @@ class AdminController extends Controller
     	$admin->address = $request->address;
     	$admin->gender = $request->sltgender;
 
-    	$img_current = 'resources/upload/admin/'.$request->img_current;// tạo input hidden có name là img_current
+    	$img_current = '/upload/admin/'.$request->img_current;// tạo input hidden có name là img_current
     	// echo $img_current;
     	if(!empty($request->file('fimage'))){
     		$file = $request->file('fimage');
     		$file_name = $file->getClientOriginalName();
     		$admin->avatar = $file_name;
-    		$file->move('resources/upload/admin/',$file_name);
+    		$file->move('/upload/admin/',$file_name);
     		if(File::exists($img_current)){
     			File::delete($img_current);
     		}

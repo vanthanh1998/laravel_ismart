@@ -32,7 +32,7 @@
                             <input type="hidden" name="img_current" value="{!! $slider['image'] !!}">
                         </div>
                         <div class="form-group">
-                            <img style="width: 100px; height: 100px" src="{{ asset('resources/upload/slider/'.$slider['image']) }}">
+                            <img style="width: 100px; height: 100px" src="{{ asset('upload/slider/'.$slider['image']) }}">
                         </div>
                     </div>
                     <!-- /.box-body -->

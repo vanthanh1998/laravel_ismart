@@ -6,7 +6,7 @@
                 <div class="section-detail">
                     <?php $__currentLoopData = $slider; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="item">
-                        <img src="<?php echo e(asset('resources/upload/slider/'.$item['image'])); ?>" alt="">
+                        <img src="<?php echo e(asset('upload/slider/'.$item['image'])); ?>" alt="">
                     </div>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
@@ -16,35 +16,35 @@
                     <ul class="list-item clearfix">
                         <li>
                             <div class="thumb">
-                                <img src="<?php echo url('public/images/icon-1.png'); ?>">
+                                <img src="<?php echo url('images/icon-1.png'); ?>">
                             </div>
                             <h3 class="title">Miễn phí vận chuyển</h3>
                             <p class="desc">Tới tận tay khách hàng</p>
                         </li>
                         <li>
                             <div class="thumb">
-                                <img src="<?php echo url('public/images/icon-2.png'); ?>">
+                                <img src="<?php echo url('images/icon-2.png'); ?>">
                             </div>
                             <h3 class="title">Tư vấn 24/7</h3>
                             <p class="desc">1900.9999</p>
                         </li>
                         <li>
                             <div class="thumb">
-                                <img src="<?php echo url('public/images/icon-3.png'); ?>">
+                                <img src="<?php echo url('images/icon-3.png'); ?>">
                             </div>
                             <h3 class="title">Tiết kiệm hơn</h3>
                             <p class="desc">Với nhiều ưu đãi cực lớn</p>
                         </li>
                         <li>
                             <div class="thumb">
-                                <img src="<?php echo url('public/images/icon-4.png'); ?>">
+                                <img src="<?php echo url('images/icon-4.png'); ?>">
                             </div>
                             <h3 class="title">Thanh toán nhanh</h3>
                             <p class="desc">Hỗ trợ nhiều hình thức</p>
                         </li>
                         <li>
                             <div class="thumb">
-                                <img src="<?php echo url('public/images/icon-5.png'); ?>">
+                                <img src="<?php echo url('images/icon-5.png'); ?>">
                             </div>
                             <h3 class="title">Đặt hàng online</h3>
                             <p class="desc">Thao tác đơn giản</p>
@@ -72,7 +72,7 @@
                             <p class="<?php echo $labelnew; ?>">
                             </p>
                             <a href="<?php echo url('ctsp',[$item->id,$item->alias]); ?>" title="" class="thumb">
-                                <img src="<?php echo e(asset('resources/upload/product/'.$item->image)); ?>">
+                                <img src="<?php echo e(asset('upload/product/'.$item->image)); ?>">
                             </a>
                             <a href="<?php echo url('ctsp',[$item->id,$item->alias]); ?>" title="" class="product-name"><?php echo $item->product_name; ?></a>
                             <div class="price">
@@ -112,7 +112,7 @@
                                     <p class="<?php echo $labelnew; ?>">
                                     </p>
                                     <a href="<?php echo url('ctsp',[$item->id,$item->alias]); ?>" title="" class="thumb">
-                                        <img src="<?php echo e(asset('resources/upload/product/'.$item->image)); ?>">
+                                        <img src="<?php echo e(asset('upload/product/'.$item->image)); ?>">
                                     </a>
                                     <a href="<?php echo url('ctsp',[$item->id,$item->alias]); ?>" title="" class="product-name"><?php echo $item->product_name; ?></a>
                                     <div class="price">
@@ -151,7 +151,7 @@
                                     <p class="<?php echo $labelnew; ?>">
                                     </p>
                                     <a href="<?php echo url('ctsp',[$item->id,$item->alias]); ?>" title="" class="thumb">
-                                        <img src="<?php echo e(asset('resources/upload/product/'.$item->image)); ?>">
+                                        <img src="<?php echo e(asset('upload/product/'.$item->image)); ?>">
                                     </a>
                                     <a href="<?php echo url('ctsp',[$item->id,$item->alias]); ?>" title="" class="product-name"><?php echo $item->product_name; ?></a>
                                     <div class="price">
@@ -190,7 +190,7 @@
                                     <p class="<?php echo $labelnew; ?>">
                                     </p>
                                     <a href="<?php echo url('ctsp',[$item->id,$item->alias]); ?>" title="" class="thumb">
-                                        <img src="<?php echo e(asset('resources/upload/product/'.$item->image)); ?>">
+                                        <img src="<?php echo e(asset('upload/product/'.$item->image)); ?>">
                                     </a>
                                     <a href="<?php echo url('ctsp',[$item->id,$item->alias]); ?>" title="" class="product-name"><?php echo $item->product_name; ?></a>
                                     <div class="price">
@@ -229,7 +229,7 @@
                                     <p class="<?php echo $labelnew; ?>">
                                     </p>
                                     <a href="<?php echo url('ctsp',[$item->id,$item->alias]); ?>" title="" class="thumb">
-                                        <img src="<?php echo e(asset('resources/upload/product/'.$item->image)); ?>">
+                                        <img src="<?php echo e(asset('upload/product/'.$item->image)); ?>">
                                     </a>
                                     <a href="<?php echo url('ctsp',[$item->id,$item->alias]); ?>" title="" class="product-name"><?php echo $item->product_name; ?></a>
                                     <div class="price">
