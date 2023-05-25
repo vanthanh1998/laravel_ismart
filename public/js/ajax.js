@@ -95,7 +95,7 @@ $(document).ready(function () {
             data:$(this).serialize(),
             success:function(data){
                 // console.log(data);
-                if(data.error === true){
+                if(data.error == true){
                     $('.error').hide();
                     if(data.message.username != undefined){
                         $('.username_error').show().html(data.message.username);
@@ -116,7 +116,7 @@ $(document).ready(function () {
                         $('#username').val('');
                         $('#password').val('');
                     }
-                }else if(data.error === false){
+                }else{
                     swal({
                         title: "Thành công",
                         text: data.message,
