@@ -20,7 +20,6 @@ class CheckoutEmail extends Mailable
     public function __construct($data)
     {
         $this->data = $data;
-        // $this->to($email)->subject('Xác nhận hóa đơn mua hàng Ismart');
     }
 
     /**
@@ -30,6 +29,6 @@ class CheckoutEmail extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.checkout_email');
+        return $this->subject('Xác nhận hóa đơn mua hàng Ismart')->view('emails.checkout_email');
     }
 }

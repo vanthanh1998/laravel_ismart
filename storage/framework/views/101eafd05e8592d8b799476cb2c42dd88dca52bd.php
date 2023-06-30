@@ -32,7 +32,7 @@
        	<thead>
        		<tr>
 			    <th>Tên sản phẩm</th>
-
+			    <th>Hình ảnh</th>
 			    <th>Đơn giá</th>
 			    <th>Số lượng</th>
 			    <th>Thành tiền</th>
@@ -44,7 +44,9 @@
 	        <tbody>
 	            <tr>
 	                <td><?php echo e($item->name); ?></td>
-
+					<td>
+                        <img style="width: 100px;height: auto;" src="<?php echo e($message->embed(public_path() . 'upload/product/'.$item->options->img)); ?>" />
+                    </td>
 	                <td><?php echo e(number_format($item->price)); ?> đ</td>
 	                <td><?php echo e($item->qty); ?></td>
 	                <td><?php echo e(number_format($item->qty * $item->price)); ?> đ</td>
