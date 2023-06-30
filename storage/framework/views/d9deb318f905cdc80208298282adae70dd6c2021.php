@@ -55,7 +55,7 @@
                 data:$(this).serialize(),
                 success:function(data){
                     console.log(data);
-                    if(data.error == true){
+                    if(data.error === true){
                         $('.error').hide();
                         if(data.message.username != undefined){
                             $('.username_error').show().html(data.message.username);
@@ -66,7 +66,7 @@
                         if(data.message.errorAll != undefined){
                             $('.errorAll').show().html(data.message.errorAll);
                         }
-                    }else{
+                    }else if (data.error === false){
                         $('#confirm-success').modal('show');
                         $('#confirm-success').on('shown.bs.modal',function(){
                             window.location.href = "<?php echo e(route('get.admin')); ?>";

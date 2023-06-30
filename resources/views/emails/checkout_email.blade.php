@@ -1,6 +1,6 @@
 <div>
 	<h3>Thông tin khách hàng</h3>
-	{{-- <p>
+	 <p>
 		<strong class="info">Khách hàng: </strong>
 		{{$data['fullname']}}
 	</p>
@@ -19,7 +19,7 @@
 	<p>
 		<strong class="info">Ghi chú</strong>
 		{{$data['note']}}
-	</p> --}}
+	</p>
 
 </div>
     <div class="form-group">
@@ -27,7 +27,7 @@
        	<thead>
        		<tr>
 			    <th>Tên sản phẩm</th>
-			    <th>Hình ảnh</th>
+{{--			    <th>Hình ảnh</th>--}}
 			    <th>Đơn giá</th>
 			    <th>Số lượng</th>
 			    <th>Thành tiền</th>
@@ -39,7 +39,7 @@
 	        <tbody>
 	            <tr>
 	                <td>{{$item->name}}</td>
-					<td><img style="width: 100px;height: auto;" src="{{$message->embed(asset('upload/product/'.$item->options->img))}}" alt="" /></td>
+{{--					<td><img style="width: 100px;height: auto;" src="{{$message->embed(asset('upload/product/'.$item->options->img))}}" alt="" /></td>--}}
 	                <td>{{number_format($item->price)}} đ</td>
 	                <td>{{$item->qty}}</td>
 	                <td>{{number_format($item->qty * $item->price) }} đ</td>

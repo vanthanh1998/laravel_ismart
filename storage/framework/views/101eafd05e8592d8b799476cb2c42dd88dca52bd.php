@@ -1,6 +1,30 @@
 <div>
 	<h3>Thông tin khách hàng</h3>
-	
+	 <p>
+		<strong class="info">Khách hàng: </strong>
+		<?php echo e($data['fullname']); ?>
+
+	</p>
+	<p>
+		<strong class="info">Email: </strong>
+		<?php echo e($data['email']); ?>
+
+	</p>
+	<p>
+		<strong class="info">Điện Thoại</strong>
+		<?php echo e($data['phone']); ?>
+
+	</p>
+	<p>
+		<strong class="info">Địa chỉ</strong>
+		<?php echo e($data['address']); ?>
+
+	</p>
+	<p>
+		<strong class="info">Ghi chú</strong>
+		<?php echo e($data['note']); ?>
+
+	</p>
 
 </div>
     <div class="form-group">
@@ -8,7 +32,7 @@
        	<thead>
        		<tr>
 			    <th>Tên sản phẩm</th>
-			    <th>Hình ảnh</th>
+
 			    <th>Đơn giá</th>
 			    <th>Số lượng</th>
 			    <th>Thành tiền</th>
@@ -20,7 +44,7 @@
 	        <tbody>
 	            <tr>
 	                <td><?php echo e($item->name); ?></td>
-					<td><img style="width: 100px;height: auto;" src="<?php echo e($message->embed(asset('upload/product/'.$item->options->img))); ?>" alt="" /></td>
+
 	                <td><?php echo e(number_format($item->price)); ?> đ</td>
 	                <td><?php echo e($item->qty); ?></td>
 	                <td><?php echo e(number_format($item->qty * $item->price)); ?> đ</td>

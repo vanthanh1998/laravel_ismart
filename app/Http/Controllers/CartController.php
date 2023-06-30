@@ -123,7 +123,7 @@ class CartController extends Controller
                 $data['info'] = ['fullname'=> $request->fullname,'email'=>$request->email,'phone'=>$request->phone,'address'=>$request->address,'note'=>$request->note];
 
                 $email = $request->email;
-                Mail::to("vanthanh0610998@gmail.com")->send(new CheckoutEmail($data['info']));
+                Mail::to("vanthanh.0610998@gmail.com")->send(new CheckoutEmail($data['info']));
                 Cart::destroy();
                 return response()->json([
                     'error' => false,

@@ -1,5 +1,4 @@
-@extends('admin.layouts.master')
-@section('content')
+<?php $__env->startSection('content'); ?>
     <div class="content-wrapper" style="min-height: 915.8px;">
         <!-- Content Header (Page header) -->
         <section class="content-header">
@@ -8,7 +7,7 @@
                 <small>Control panel</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="{{url('admin/dashboard')}}"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li><a href="<?php echo e(url('admin/dashboard')); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
                 <li class="active">Dashboard</li>
             </ol>
         </section>
@@ -83,4 +82,6 @@
         </section>
         <!-- /.content -->
     </div>
-@stop
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('admin.layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\xampp\htdocs\laravel_ismart\resources\views/admin/dashboard/index.blade.php ENDPATH**/ ?>

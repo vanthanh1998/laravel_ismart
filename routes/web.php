@@ -20,8 +20,7 @@ Route::get('/admin/login','LoginAdminController@get_login_admin')->name('get.adm
 Route::post('/admin/login','LoginAdminController@post_login_admin')->name('post.admin.login');
 Route::get('logout', 'LoginAdminController@get_logout_admin');
 
-// trang chủ admin
-Route::get('admin','DashboardController@get_admin')->name('get.admin')->middleware('CheckLoginAdmin');
+
 
 Route::get('loaisanpham/{id}/{tenloai}','HomeController@loaisanpham');
 
@@ -102,6 +101,9 @@ Route::get('dang-xuat', 'DangNhapController@get_logout')->name('get.logout.all')
 
 //admin
 Route::group(['prefix'=>'admin','middleware'=>'CheckLoginAdmin'],function(){
+
+    // trang chủ admin
+    Route::get('dashboard','DashboardController@get_admin')->name('get.admin')->middleware('CheckLoginAdmin');
 
 	Route::group(['prefix'=>'admin'],function(){
 
