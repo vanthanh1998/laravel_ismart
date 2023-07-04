@@ -105,7 +105,7 @@ class ProductController extends Controller
     	$product->selling_product = $request->selling_product;
     	$product->featured_product = $request->featured_product;
 
-    	$file->move('public/upload/product/',$file_name); // $file là: $request->file('fImages')
+    	$file->move('upload/product//',$file_name); // $file là: $request->file('fImages')
         dd($product);
 
         $product->save();
@@ -120,7 +120,7 @@ class ProductController extends Controller
                     $file_name = $file->getClientOriginalName();
                     $product_img->image = $file_name;
                     $product_img->product_id = $product_id;
-                    $file->move('public/upload/product_detail/',$file_name);
+                    $file->move('upload/product/_detail/',$file_name);
                     $product_img->save();
                 }
             }
@@ -154,13 +154,13 @@ class ProductController extends Controller
     	$product->selling_product = $request->input('selling_product');
     	$product->featured_product = $request->input('featured_product');
 
-    	$img_current = 'public/upload/product/'.$request->input('img_current');// tạo input hidden có name là img_current
+    	$img_current = 'upload/product//'.$request->input('img_current');// tạo input hidden có name là img_current
         // echo $img_current;// ~~ public/upload/midu.jpg
         if(!empty($request->file('fimage'))){
             $file = $request->file('fimage'); // lấy file image
             $file_name = $file->getClientOriginalName();
             $product->image= $file_name;
-            $file ->move('public/upload/product/',$file_name);
+            $file ->move('upload/product//',$file_name);
             if(File::exists($img_current)){
                 File::delete($img_current);
             }
@@ -176,7 +176,7 @@ class ProductController extends Controller
                 if(isset($file)){
                     $product_img->image = $file->getClientOriginalName();
                     $product_img->product_id= $id;
-                    $file->move('public/upload/product_detail/',$file->getClientOriginalName());
+                    $file->move('upload/product/_detail/',$file->getClientOriginalName());
                     $product_img->save();
                 }
             }
@@ -190,7 +190,7 @@ class ProductController extends Controller
             $idHinh = (int)$request->get('idHinh');
             $image_detail = List_image::find($idHinh);
             if(!empty($image_detail)){
-                $img = 'public/upload/product_detail/'.$image_detail->image;
+                $img = 'upload/product/_detail/'.$image_detail->image;
                 if(File::exists($img)){
                     File::delete($img);
                 }
@@ -202,10 +202,10 @@ class ProductController extends Controller
     public function get_delete($id){
         $list_image = Product::find($id)->fimage->toArray();
         foreach($list_image as $image){
-            File::delete('public/upload/product_detail/'.$image['image']);// xóa hình trong list_image
+            File::delete('upload/product/_detail/'.$image['image']);// xóa hình trong list_image
         }
         $product = Product::find($id);
-        File::delete('public/upload/product/'.$product['image']);
+        File::delete('upload/product//'.$product['image']);
         $product->delete($id);
         return response()->json([
             'success' => true,
@@ -217,7 +217,7 @@ class ProductController extends Controller
         $array = $request->input('id');
         $product = Product::whereIn('id', $array);
         foreach($product as $image){
-            File::delete('public/upload/product/'.$image['image']);// xóa hình trong list_image
+            File::delete('upload/product//'.$image['image']);// xóa hình trong list_image
         }
         $product->delete();
         return response()->json([

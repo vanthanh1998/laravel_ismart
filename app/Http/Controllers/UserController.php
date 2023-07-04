@@ -76,12 +76,12 @@ class UserController extends Controller
     	$user->address = $request->address;
     	$user->gender = $request->sltgender;
 
-    	$img_current = 'public/upload/user/'.$request->img_current;// tạo
+    	$img_current = 'upload/user/'.$request->img_current;// tạo
     	if(!empty($request->file('fimage'))){
     		$file = $request->file('fimage');
     		$file_name = $file->getClientOriginalName();
     		$user->avatar = $file_name;
-    		$file->move('public/upload/user/',$file_name);
+    		$file->move('upload/user/',$file_name);
     		if(File::exists($img_current)){
     			File::delete($img_current);
     		}
@@ -93,7 +93,7 @@ class UserController extends Controller
     }
     public function get_delete($id){
     	$user = user::find($id);
-        File::delete('public/upload/user/'.$user['avatar']);
+        File::delete('upload/user/'.$user['avatar']);
         $user->delete($id);
         return response()->json([
             'success' => true,
@@ -105,7 +105,7 @@ class UserController extends Controller
         $array = $request->input('id');
         $user = User::whereIn('id', $array);
         foreach($user as $image){
-            File::delete('public/upload/user/'.$image['avatar']);// xóa hình trong list_image
+            File::delete('upload/user/'.$image['avatar']);// xóa hình trong list_image
         }
         $user->delete();
         return response()->json([
