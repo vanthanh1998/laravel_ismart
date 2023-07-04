@@ -46,7 +46,7 @@
                                         <span id="price" name="price">{!! number_format($item->price,0,",",".") !!} đ</span>
                                     </td>
                                     <td>
-                                        <input type="number" min="1" max="{!! $item->options->qty_product !!}" name="num-order" value="{!! $item->qty !!}" onchange="updateCart(this.value,'{{$item->rowId}}')" class="num-order">
+                                        <input style="width: 100px;" type="number" min="1" max="{!! $item->options->qty_product !!}" name="num-order" value="{!! $item->qty !!}" onchange="updateCart(this.value,'{{$item->rowId}}')" class="num-order">
                                     </td>
                                     <td>{{number_format(($item->qty)*($item->price),0,',','.')}} đ</td>
                                     <td>
