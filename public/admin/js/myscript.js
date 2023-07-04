@@ -11,8 +11,8 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-	$("a#del_img_demo").on('click',function(){ // phải có 'a' k có chỉ chạy đc 1 cái
-		var url = "http://thanhrain1998.com.vn/admin/product/delete_img/";
+	$("a#del_img_demo").on('click',function(){
+		var url = window.location.origin + "/admin/product/delete_img/";
 		var _token = $("form[name='frmEdit_Product']").find("input[name='_token']").val();
 		var idHinh = $(this).parent().find("img").attr("idHinh");
 		var img = $(this).parent().find("img").attr("src");

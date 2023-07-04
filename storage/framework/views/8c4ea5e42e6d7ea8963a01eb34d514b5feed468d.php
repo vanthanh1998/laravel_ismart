@@ -42,7 +42,7 @@
     <script src="<?php echo e(url('admin/js/jquery-2.2.4.min.js')); ?>" type="text/javascript"></script>
     
     <script src="<?php echo e(url('admin/js/bootstrap/bootstrap-toggle.min.js')); ?>" type="text/javascript"></script>
-    <script src="<?php echo e(url('admin/js/plugins/ckeditor/ckeditor.js')); ?>" type="text/javascript"></script>
+    <script src="<?php echo e(url('admin/js/plugins/ckeditor5/ckeditor.js')); ?>" type="text/javascript"></script>
     <script src="<?php echo e(url('admin/js/main.js')); ?>" type="text/javascript"></script>
     <script src="<?php echo e(url('admin/js/myscript.js')); ?>" type="text/javascript"></script>
     <script src="<?php echo e(url('admin/js/check.js')); ?>" type="text/javascript"></script>
@@ -162,7 +162,26 @@
 </footer>
 
 <div class="control-sidebar-bg"></div>
-
+<script>
+    ClassicEditor
+        .create( document.querySelector( '.editor1' ),{
+            ckfinder: {
+                uploadUrl: '<?php echo e(route('ckeditor.upload'). '?_token='.csrf_token()); ?>'
+            }
+        } )
+        .catch( error => {
+            console.error( error );
+        } );
+    ClassicEditor
+        .create( document.querySelector( '.editor2' ),{
+            ckfinder: {
+                uploadUrl: '<?php echo e(route('ckeditor.upload'). '?_token='.csrf_token()); ?>'
+            }
+        } )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
 </body>
 </html>
 

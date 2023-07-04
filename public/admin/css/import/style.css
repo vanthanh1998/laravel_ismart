@@ -38,3 +38,6 @@ a {
 .error{
     color:red;
 }
+.ck-editor__editable{
+    height: auto;
+}

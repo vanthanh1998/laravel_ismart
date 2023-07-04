@@ -105,7 +105,7 @@ class ProductController extends Controller
     	$product->selling_product = $request->selling_product;
     	$product->featured_product = $request->featured_product;
 
-    	$file->move('upload/product//',$file_name); // $file là: $request->file('fImages')
+    	$file->move('upload/product/',$file_name); // $file là: $request->file('fImages')
         dd($product);
 
         $product->save();
@@ -154,13 +154,13 @@ class ProductController extends Controller
     	$product->selling_product = $request->input('selling_product');
     	$product->featured_product = $request->input('featured_product');
 
-    	$img_current = 'upload/product//'.$request->input('img_current');// tạo input hidden có name là img_current
+    	$img_current = 'upload/product/'.$request->input('img_current');// tạo input hidden có name là img_current
         // echo $img_current;// ~~ public/upload/midu.jpg
         if(!empty($request->file('fimage'))){
             $file = $request->file('fimage'); // lấy file image
             $file_name = $file->getClientOriginalName();
             $product->image= $file_name;
-            $file ->move('upload/product//',$file_name);
+            $file ->move('upload/product/',$file_name);
             if(File::exists($img_current)){
                 File::delete($img_current);
             }
@@ -205,7 +205,7 @@ class ProductController extends Controller
             File::delete('upload/product/_detail/'.$image['image']);// xóa hình trong list_image
         }
         $product = Product::find($id);
-        File::delete('upload/product//'.$product['image']);
+        File::delete('upload/product/'.$product['image']);
         $product->delete($id);
         return response()->json([
             'success' => true,
@@ -217,7 +217,7 @@ class ProductController extends Controller
         $array = $request->input('id');
         $product = Product::whereIn('id', $array);
         foreach($product as $image){
-            File::delete('upload/product//'.$image['image']);// xóa hình trong list_image
+            File::delete('upload/product/'.$image['image']);// xóa hình trong list_image
         }
         $product->delete();
         return response()->json([

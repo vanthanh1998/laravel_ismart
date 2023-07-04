@@ -185,9 +185,14 @@ Route::group(['prefix'=>'admin','middleware'=>'CheckLoginAdmin'],function(){
 
         Route::get('changeStatusProduct', 'ProductController@changeStatusProduct')->name('get.changeStatusProduct');
 
-
 	});
-	Route::group(['prefix'=>'cate_post'],function(){
+
+    Route::group(['prefix'=>'upload'],function(){
+        Route::post('/upload', 'CkeditorController@uploadImage')->name('ckeditor.upload');
+    });
+
+
+    Route::group(['prefix'=>'cate_post'],function(){
 		Route::get('list','CatePostController@get_list')->name('get.list.cate_post');
         Route::post('cate_posts/getData', 'CatePostController@getData')->name('get.data.cate_posts');
 

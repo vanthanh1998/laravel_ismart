@@ -30,12 +30,12 @@
 
                             <div class="form-group">
                                 <label for="desc">Mô tả ngắn</label>
-                                <textarea name="desc" id="desc" class="ckeditor">{!! old('desc'),isset($page) ? $page['desc'] :null !!}</textarea>
+                                <textarea name="desc" id="desc" class="editor1">{!! old('desc'),isset($page) ? $page['desc'] :null !!}</textarea>
                                 <span class="error">{!! $errors->first('desc') !!}</span>
                             </div>
                             <div class="form-group">
                                 <label for="content">Nội dung</label>
-                                <textarea name="content" id="content" class="ckeditor">{!! old('content'),isset($page) ? $page['content'] :null !!}</textarea>
+                                <textarea name="content" id="content" class="editor2">{!! old('content'),isset($page) ? $page['content'] :null !!}</textarea>
                                 <span class="error">{!! $errors->first('content') !!}</span>
                             </div>
                         </div>
