@@ -32,22 +32,20 @@
                             <tbody>
                             <?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <tr id="delele_no_reload_<?php echo $item->rowId; ?>">
-                                    <td><?php echo $item->id; ?></td>
+                                    <td><a href="<?php echo url('ctsp',[$item->id,$item->name]); ?>" target="_blank"><?php echo $item->id; ?></a></td>
                                     <td>
                                         <a href="" title="" class="thumb" style="display: inline-block;width: 100px;min-height: 100px;overflow: hidden;border: 1px solid #ccc;">
                                             <img src="<?php echo e(asset('upload/product/'.$item->options->img)); ?>" alt="">
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="" title="" class="name-product"><?php echo $item->name; ?></a>
+                                        <a href="<?php echo url('ctsp',[$item->id,$item->name]); ?>" title="" target="_blank" class="name-product"><?php echo $item->name; ?></a>
                                     </td>
                                     <td>
                                         <span id="price" name="price"><?php echo number_format($item->price,0,",","."); ?> đ</span>
                                     </td>
                                     <td>
                                         <input type="number" min="1" max="<?php echo $item->options->qty_product; ?>" name="num-order" value="<?php echo $item->qty; ?>" onchange="updateCart(this.value,'<?php echo e($item->rowId); ?>')" class="num-order">
-
-
                                     </td>
                                     <td><?php echo e(number_format(($item->qty)*($item->price),0,',','.')); ?> đ</td>
                                     <td>
@@ -184,4 +182,5 @@
         }
     </script>
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('layout.index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\xampp\htdocs\laravel_ismart\resources\views/pages/cart/giohang.blade.php ENDPATH**/ ?>

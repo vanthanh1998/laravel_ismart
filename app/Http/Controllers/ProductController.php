@@ -22,7 +22,7 @@ class ProductController extends Controller
 
     public function getData(Request $request){
         if($request->ajax()){
-            $products  = Product::latest()->get();
+            $products  = Product::latest()->orderBy('id', 'desc')->get();
             return DataTables::of($products)
                 ->addColumn('action', function($products){
                     $button = '<a href="'.url('admin/product/edit/'.$products->id).'" class="btn btn-primary btn-xs dt-edit" style="margin-right:16px;"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>';
@@ -85,15 +85,14 @@ class ProductController extends Controller
     	return view('admin.product.add',compact('cate_detail','user','image'));
     }
     public function post_add(ProductRequest $request){
-        dd('aaaaa');
     	$file = $request->file('fimage'); // lấy file image
 
-        dd($file);
         $file_name = $file->getClientOriginalName();
 
     	$product = new Product();
     	$product->product_name = $request->product_name;
     	$product->alias = changeTitle($request->product_name);
+        $product->product_name_en = '';
     	$product->image = $file_name;
     	$product->price_new = $request->price_new;
     	$product->price_old = $request->price_old;
@@ -104,12 +103,11 @@ class ProductController extends Controller
     	$product->cate_product_detail_id = $request->sltcate_detail;
     	$product->selling_product = $request->selling_product;
     	$product->featured_product = $request->featured_product;
+    	$product->status = 1;
 
     	$file->move('upload/product/',$file_name); // $file là: $request->file('fImages')
-        dd($product);
 
         $product->save();
-
 
         // list_image
         $product_id = $product->id; // lấy id
@@ -120,7 +118,7 @@ class ProductController extends Controller
                     $file_name = $file->getClientOriginalName();
                     $product_img->image = $file_name;
                     $product_img->product_id = $product_id;
-                    $file->move('upload/product/_detail/',$file_name);
+                    $file->move('upload/product_detail/',$file_name);
                     $product_img->save();
                 }
             }
@@ -176,7 +174,7 @@ class ProductController extends Controller
                 if(isset($file)){
                     $product_img->image = $file->getClientOriginalName();
                     $product_img->product_id= $id;
-                    $file->move('upload/product/_detail/',$file->getClientOriginalName());
+                    $file->move('upload/product_detail/',$file->getClientOriginalName());
                     $product_img->save();
                 }
             }
@@ -190,7 +188,7 @@ class ProductController extends Controller
             $idHinh = (int)$request->get('idHinh');
             $image_detail = List_image::find($idHinh);
             if(!empty($image_detail)){
-                $img = 'upload/product/_detail/'.$image_detail->image;
+                $img = 'upload/product_detail/'.$image_detail->image;
                 if(File::exists($img)){
                     File::delete($img);
                 }
@@ -202,7 +200,7 @@ class ProductController extends Controller
     public function get_delete($id){
         $list_image = Product::find($id)->fimage->toArray();
         foreach($list_image as $image){
-            File::delete('upload/product/_detail/'.$image['image']);// xóa hình trong list_image
+            File::delete('upload/product_detail/'.$image['image']);// xóa hình trong list_image
         }
         $product = Product::find($id);
         File::delete('upload/product/'.$product['image']);

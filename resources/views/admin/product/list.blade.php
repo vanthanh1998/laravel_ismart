@@ -83,7 +83,7 @@
                     type:'post',
                 },
 
-                order: [[ 1, 'asc' ]],
+                order: [[ 1, 'desc' ]],
                 columns: [
                     {data: 'checkbox', name: 'checkbox', orderable: false, searchable: false},
                     { data: 'id', name: 'id',targets: 1 },

@@ -33,22 +33,20 @@
                             <tbody>
                             @foreach($products as $item)
                                 <tr id="delele_no_reload_{!! $item->rowId !!}">
-                                    <td>{!! $item->id !!}</td>
+                                    <td><a href="{!! url('ctsp',[$item->id,$item->name]) !!}" target="_blank">{!! $item->id !!}</a></td>
                                     <td>
                                         <a href="" title="" class="thumb" style="display: inline-block;width: 100px;min-height: 100px;overflow: hidden;border: 1px solid #ccc;">
                                             <img src="{{asset('upload/product/'.$item->options->img)}}" alt="">
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="" title="" class="name-product">{!! $item->name !!}</a>
+                                        <a href="{!! url('ctsp',[$item->id,$item->name]) !!}" title="" target="_blank" class="name-product">{!! $item->name !!}</a>
                                     </td>
                                     <td>
                                         <span id="price" name="price">{!! number_format($item->price,0,",",".") !!} đ</span>
                                     </td>
                                     <td>
                                         <input type="number" min="1" max="{!! $item->options->qty_product !!}" name="num-order" value="{!! $item->qty !!}" onchange="updateCart(this.value,'{{$item->rowId}}')" class="num-order">
-{{--                                        <input type="number" min="1" max="{!! $item->options->qty_product !!}" data-product="{!! $item->id !!}" name="qty" value="{!! $item->qty !!}" class="num_order">--}}
-{{--                                        <input type="hidden" name="id" id="{{$item->id}}">--}}
                                     </td>
                                     <td>{{number_format(($item->qty)*($item->price),0,',','.')}} đ</td>
                                     <td>

@@ -40,6 +40,7 @@
         <script src="{!! url('js/main.js') !!}" type="text/javascript"></script>
         <script src="{!! url('js/contact.js') !!}" type="text/javascript"></script>
         <script src="{!! url('js/add_cart.js') !!}" type="text/javascript"></script>
+        <script src="{!! url('js/plugin_button.js') !!}" type="text/javascript"></script>
         <script src="{!! url('js/form_validation.js') !!}" type="text/javascript"></script>
         <script src="{!! url('js/contact_mobile.js') !!}" type="text/javascript"></script>
         <script src="{!! url('js/ajax.js') !!}" type="text/javascript"></script>

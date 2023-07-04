@@ -26,7 +26,7 @@ class ProductRequest extends FormRequest
         return [
             'product_name' => 'required|unique:product,product_name',
             'price_new' => 'required',
-            'fimage' =>'required|image',
+            'fimage' => 'required|file|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'selling_product'=>'required',
             'featured_product'=>'required',
             'qty_product' => 'required',
