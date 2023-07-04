@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
    	protected $table = 'product';
-   	protected $fillable = ['product_name','alias','price_new','price_old','product_desc','product_content','image','qty_product','keyword','admin_id','cate_product_detail_id','selling_product','featured_product','status','product_total_rating','product_total_number'];
+   	protected $fillable = ['product_name','alias','price_new','price_old','desc','content','image','qty_product','keyword','admin_id','cate_product_detail_id','selling_product','featured_product','status','product_total_rating','product_total_number'];
       // public static function productSearch($keyword, $paginate){
       //    return Product::where('product_name', 'like', '%' . $keyword . '%')->paginate($paginate, ['*'], 'pp');
       // }

@@ -26,6 +26,7 @@
        <table width="100%" border="1" cellspacing="0" cellpadding="3" bordercolor="#ffcccc" style="text-align:center;">
        	<thead>
        		<tr>
+                <th></th>
 			    <th>Tên sản phẩm</th>
 			    <th>Đơn giá</th>
 			    <th>Số lượng</th>
@@ -33,10 +34,15 @@
 			</tr>
        	</thead>
        	@if(!empty(Cart::content()))
-       		<?php $cart = Cart::content() ?>
+       		<?php
+               $cart = Cart::content();
+               $i = 1;
+             ?>
+
 	        @foreach($cart as $item)
 	        <tbody>
 	            <tr>
+                    <td>{{$i++}}</td>
 	                <td>{{$item->name}}</td>
 	                <td>{{number_format($item->price)}} đ</td>
 	                <td>{{$item->qty}}</td>

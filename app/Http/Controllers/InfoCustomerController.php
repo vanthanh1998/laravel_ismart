@@ -66,6 +66,7 @@ class InfoCustomerController extends Controller
     }
     public function getlichsugiaodich($id){
         $bill = Bill::where('user_id',$id)
+                ->orderBy('id', 'desc')
                 ->get()
                 ->toArray();
         return view('pages.history.lichsugiaodich',compact('bill'));

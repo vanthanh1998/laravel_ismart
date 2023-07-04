@@ -19,8 +19,8 @@ class CreateProductTable extends Migration
             $table->string('alias');
             $table->integer('price_new');
             $table->integer('price_old')->nullable();
-            $table->text('product_desc')->nullable();
-            $table->text('product_content')->nullable();
+            $table->text('desc')->nullable();
+            $table->text('content')->nullable();
             $table->string('image');
             $table->integer('qty_product');
             $table->string('keyword')->nullable();

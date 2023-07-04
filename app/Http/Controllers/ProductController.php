@@ -33,7 +33,7 @@ class ProductController extends Controller
                     return '<input type="checkbox" data-id="'.$products->id.'" name="checkItem" class="delete_checkbox" class="checkItem">';
                 })
                 ->addColumn('image', function ($products) {
-                    $url = asset("public/upload/product/$products->image");
+                    $url = asset("/upload/product/$products->image");
                     return '<img src='.$url.' border="0"  class="img-rounded" align="center" />';
                 })
                 ->addColumn('status', function ($products) {
@@ -85,7 +85,10 @@ class ProductController extends Controller
     	return view('admin.product.add',compact('cate_detail','user','image'));
     }
     public function post_add(ProductRequest $request){
+        dd('aaaaa');
     	$file = $request->file('fimage'); // lấy file image
+
+        dd($file);
         $file_name = $file->getClientOriginalName();
 
     	$product = new Product();
@@ -94,8 +97,8 @@ class ProductController extends Controller
     	$product->image = $file_name;
     	$product->price_new = $request->price_new;
     	$product->price_old = $request->price_old;
-    	$product->product_desc = $request->desc;
-    	$product->product_content = $request->content;
+    	$product->desc = $request->desc;
+    	$product->content = $request->content;
     	$product->qty_product = $request->qty_product;
     	$product->admin_id = get_data_user('admin');
     	$product->cate_product_detail_id = $request->sltcate_detail;
@@ -103,7 +106,10 @@ class ProductController extends Controller
     	$product->featured_product = $request->featured_product;
 
     	$file->move('public/upload/product/',$file_name); // $file là: $request->file('fImages')
+        dd($product);
+
         $product->save();
+
 
         // list_image
         $product_id = $product->id; // lấy id
@@ -141,8 +147,8 @@ class ProductController extends Controller
     	$product->alias = changeTitle($request->input('product_name'));
     	$product->price_new = $request->input('price_new');
     	$product->price_old = $request->input('price_old');
-    	$product->product_desc = $request->input('desc');
-    	$product->product_content = $request->input('content');
+    	$product->desc = $request->input('desc');
+    	$product->content = $request->input('content');
     	$product->qty_product = $request->input('qty_product');
     	$product->cate_product_detail_id = $request->input('sltcate_detail');
     	$product->selling_product = $request->input('selling_product');

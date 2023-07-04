@@ -1,7 +1,7 @@
 <ul class="sidebar-menu" data-widget="tree">
     <li class="header">MAIN NAVIGATION</li>
 
-    <li><a href="<?php echo e(url('admin')); ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+    <li><a href="<?php echo e(url('admin/dashboard')); ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
     <li>
         <a href="<?php echo route('get.list.page'); ?>">
             <i class="fa fa-folder"></i> <span>Trang</span>

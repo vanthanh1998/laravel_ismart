@@ -28,7 +28,7 @@ class SliderController extends Controller
                     return '<input type="checkbox" data-id="'.$slider->id.'" name="checkItem[]" class="delete_checkbox">';
                 })
                 ->addColumn('image', function ($slider) {
-                    $url = asset("public/upload/slider/$slider->image");
+                    $url = asset("/upload/slider/$slider->image");
                     return '<img src='.$url.' border="0"  class="img-rounded" align="center" />';
                 })
                 ->addColumn('status', function ($slider) {

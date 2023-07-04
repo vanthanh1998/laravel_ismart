@@ -31,22 +31,24 @@
        <table width="100%" border="1" cellspacing="0" cellpadding="3" bordercolor="#ffcccc" style="text-align:center;">
        	<thead>
        		<tr>
+                <th></th>
 			    <th>Tên sản phẩm</th>
-			    <th>Hình ảnh</th>
 			    <th>Đơn giá</th>
 			    <th>Số lượng</th>
 			    <th>Thành tiền</th>
 			</tr>
        	</thead>
        	<?php if(!empty(Cart::content())): ?>
-       		<?php $cart = Cart::content() ?>
+       		<?php
+               $cart = Cart::content();
+               $i = 1;
+             ?>
+
 	        <?php $__currentLoopData = $cart; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 	        <tbody>
 	            <tr>
+                    <td><?php echo e($i++); ?></td>
 	                <td><?php echo e($item->name); ?></td>
-					<td>
-                        <img style="width: 100px;height: auto;" src="<?php echo e($message->embed(public_path() . 'upload/product/'.$item->options->img)); ?>" />
-                    </td>
 	                <td><?php echo e(number_format($item->price)); ?> đ</td>
 	                <td><?php echo e($item->qty); ?></td>
 	                <td><?php echo e(number_format($item->qty * $item->price)); ?> đ</td>

@@ -45,7 +45,7 @@
                                     <td><span class="tbody-text">{!! $stt !!}</h3></span>
                                     <td>
                                         <div class="tbody-thumb">
-                                            <img src="{{ asset('resources/upload/slider/'.$item['image']) }}" alt="">
+                                            <img src="{{ asset('upload/slider/'.$item['image']) }}" alt="">
                                         </div>
                                     </td>
                                     <td><span class="tbody-text">{!! $item['name'] !!}</span></td>

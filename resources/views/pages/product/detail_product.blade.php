@@ -95,7 +95,7 @@
                     <h3 class="section-title">Mô tả sản phẩm</h3>
                 </div>
                 <div class="section-detail">
-                    <p>{!! $ctsp['product_content'] !!}</p>
+                    <p>{!! $ctsp['content'] !!}</p>
                 </div>
                 <div id="like-fb" class="cleafix">
                     <div class="fb-like" data-href="" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>

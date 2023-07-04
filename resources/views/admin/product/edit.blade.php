@@ -52,12 +52,12 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="desc">Mô tả ngắn</label>
-                                    <textarea name="desc" id="desc" class="ckeditor">{!! old('desc'),isset($product) ? $product['product_desc'] :null !!}</textarea>
+                                    <textarea name="desc" id="desc" class="ckeditor">{!! old('desc'),isset($product) ? $product['desc'] :null !!}</textarea>
                                     <span class="error">{!! $errors->first('desc') !!}</span>
                                 </div>
                                 <div class="form-group">
                                     <label for="content">Nội dung</label>
-                                    <textarea name="content" id="content" class="ckeditor">{!! old('content'),isset($product) ? $product['product_content'] :null !!}</textarea>
+                                    <textarea name="content" id="content" class="ckeditor">{!! old('content'),isset($product) ? $product['content'] :null !!}</textarea>
                                     <span class="error">{!! $errors->first('content') !!}</span>
                                 </div>
                             </div>

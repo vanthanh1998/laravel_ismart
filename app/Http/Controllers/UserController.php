@@ -29,7 +29,7 @@ class UserController extends Controller
                     return '<input type="checkbox" data-id="'.$users->id.'" name="checkItem[]" class="delete_checkbox">';
                 })
                 ->addColumn('avatar', function ($users) {
-                    $url = asset("public/upload/user/$users->avatar");
+                    $url = asset("/upload/user/$users->avatar");
                     return '<img src='.$url.' border="0"  class="img-rounded" align="center" />';
                 })
                 ->addColumn('status', function ($users) {
