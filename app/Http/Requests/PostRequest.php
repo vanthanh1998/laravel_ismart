@@ -15,7 +15,7 @@ class PostRequest extends FormRequest
     {
         return [
             'post_name' => 'required|unique:post,post_name',
-            'fimage' =>'required|image',
+            'fimage' => 'required|file|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'featured_post' =>'required',
         ];
     }

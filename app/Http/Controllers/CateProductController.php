@@ -53,6 +53,7 @@ class CateProductController extends Controller
     public function post_add(CateProductRequest $request){
     	$cate = new Cate_product();
     	$cate->name = $request->txtcatename;
+    	$cate->name_en = "";
     	$cate->alias = changeTitle($request->txtcatename);
     	$cate->keyword = $request->txtkeyword;
     	$cate->save();

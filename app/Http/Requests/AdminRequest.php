@@ -23,7 +23,7 @@ class AdminRequest extends FormRequest
             'sltgender'=>'required',
 
             'confirm_password' => 'required|same:password',
-            'fimage' =>'required|image',
+            'fimage' => 'required|file|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ];
     }
     public function messages()

@@ -16,6 +16,7 @@ class AdminController extends Controller
     public function getthem(){
     	return view('admin.admin.add');
     }
+
     public function postthem(AdminRequest $request){
     	$file = $request->file('fimage');
     	$file_name = $file->getClientOriginalName();
@@ -30,14 +31,16 @@ class AdminController extends Controller
     	$admin->address = $request->address;
     	$admin->gender = $request->sltgender;
     	//upload file
-    	$file->move('/upload/admin/',$file_name);
+    	$file->move('upload/admin/',$file_name);
     	$admin->save();
     	return redirect()->back()->with('success','Thêm thành công');
     }
+
     public function getsua($id){
     	$admin = Admin::find($id)->toArray();
     	return view('admin.admin.update',compact('admin'));
     }
+
     public function postsua(Request $request,$id){
     	$admin = Admin::find($id);
     	$admin->fullname = $request->fullname;
@@ -62,14 +65,15 @@ class AdminController extends Controller
     	$admin->save();
     	return redirect()->back()->with('success','Cập nhật thành công');
     }
+
     public function getchange_pass(){
     	return view('admin.admin.change_pass');
     }
+
     public function postchange_pass(ChangePassRequest $request){
     	$admin = Admin::find(get_data_user('admin'));
-        // dd($admin);
         $pass_old = $request->pass_old;
-        if(Hash::check($pass_old,$admin->password)){
+        if(Hash::check($pass_old, $admin->password)){
             $admin->password = Hash::make($request->password);
             $admin->save();
             return redirect()->back()->with('success','Đổi mật khẩu thành công');

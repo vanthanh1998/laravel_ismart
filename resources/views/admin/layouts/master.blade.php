@@ -104,26 +104,22 @@
                         </li>
                         <!-- Menu Body -->
                         <li class="user-body">
-                            <div class="row">
-                                <div class="col-xs-4 text-center">
-                                    <a href="#">Followers</a>
+                            <div class="row" style="border: 1px solid;">
+                                <div class="col-xs-4 text-center" style="border: 1px solid;">
+                                    <a style="font-size: 12px;" href="{{ url('admin/admin/update/'.Auth::guard('admin')->user()->id) }}">Profile</a>
                                 </div>
-                                <div class="col-xs-4 text-center">
-                                    <a href="#">Sales</a>
+                                <div class="col-xs-4 text-center" style="border: 1px solid;">
+                                    <a style="font-size: 12px;" href="{{ url('admin/admin/change_pass/'.Auth::guard('admin')->user()->id) }}">Change pw</a>
                                 </div>
-                                <div class="col-xs-4 text-center">
-                                    <a href="#">Friends</a>
+                                <div class="col-xs-4 text-center" style="border: 1px solid;">
+                                    <a style="font-size: 12px;" href="{{ url('logout') }}">Sign out</a>
                                 </div>
                             </div>
                             <!-- /.row -->
                         </li>
                         <!-- Menu Footer-->
                         <li class="user-footer">
-                            <div class="pull-left">
-                                <a href="#" class="btn btn-default btn-flat">Profile</a>
-                            </div>
-                            <div class="pull-right">
-                                <a href="{{ url('logout') }}" class="btn btn-default btn-flat">Sign out</a>
+                            <div class="text-center">
                             </div>
                         </li>
                     </ul>
@@ -167,19 +163,13 @@
             ckfinder: {
                 uploadUrl: '{{ route('ckeditor.upload'). '?_token='.csrf_token() }}'
             }
-        } )
-        .catch( error => {
-            console.error( error );
-        } );
+        });
     ClassicEditor
         .create( document.querySelector( '.editor2' ),{
             ckfinder: {
                 uploadUrl: '{{ route('ckeditor.upload'). '?_token='.csrf_token() }}'
             }
-        } )
-        .catch( error => {
-            console.error( error );
-        } );
+        });
 </script>
 </body>
 </html>

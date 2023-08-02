@@ -31,14 +31,11 @@
                                         @endforeach
                                     </select>
                                 </div>
-
-
                                 <div class="form-group">
                                     <label for="product_name">Tên sản phẩm</label>
                                     <input type="text" class="form-control" value="{!! old('product_name') !!}" name="product_name" id="product_name">
                                     <span class="error">{!! $errors->first('product_name') !!}</span>
                                 </div>
-
                                 <div class="form-group">
                                     <label for="exampleInputFile">Hình ảnh</label>
                                     <input type="file" name="fimage" id="exampleInputFile">
