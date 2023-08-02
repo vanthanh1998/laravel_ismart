@@ -40,6 +40,8 @@
 
     /*CHECK OUT*/
     #to-checkout-wp .shop-table tbody tr td{ white-space: nowrap;}
+    #btn-top{right: -10px;}
+    #btn-top img{max-width: 75%;}
 }
 
 @media screen and (max-width: 800px){
@@ -74,6 +76,8 @@
     #customer-info-wp .form-row{ padding-bottom: 15px;}
     .checkout-page #main-content .section:nth-child(2){ padding-left: 20px;}
     #customer-info-wp .form-row .form-col{ padding-right: 10px;}
+    #btn-top{right: -30px;}
+    #btn-top img{max-width: 50%;}
 }
 
 @media screen and (max-width: 600px){
@@ -116,6 +120,8 @@
     #list-news-wp .info{ width: 60%;}
     #list-news-wp .info .title{ font-size: 21px; line-height: 26px;}
     #list-news-wp .info .desc{ line-height: 24px;}
+    #btn-top{right: -30px;}
+    #btn-top img{max-width: 50%;}
 }
 
 @media screen and (max-width: 414px){
@@ -166,6 +172,8 @@
     /*FOOTER*/
     #footer-wp #foot-body{ padding: 30px 0px;}
     .menu-ft .title, #newfeed .title, #info-company .title{ font-size: 21px;}
+    #btn-top{right: -30px;}
+    #btn-top img{max-width: 50%;}
 }
 
 @media screen and (max-width: 375px){
@@ -194,4 +202,6 @@
     }
     /*CART & CHECKOUT*/
     .place-order-wp input[type="submit"]{ padding: 15px 30px;}
+    #btn-top{right: -30px;}
+    #btn-top img{max-width: 50%;}
 }
