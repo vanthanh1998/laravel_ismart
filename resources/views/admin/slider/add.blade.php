@@ -5,7 +5,7 @@
         <section class="content-header">
             <h1>Quản lý slider</h1>
             <ol class="breadcrumb">
-                <li><a href="{{url('admin')}}"> Home</a></li>
+                <li><a href="{{url('admin/dashboard')}}"> Home</a></li>
                 <li><a href="{{ route('get.list.slider') }}"> Slider</a></li>
                 <li class="active">Add</li>
             </ol>

@@ -71,11 +71,13 @@
 <body class="hold-transition skin-blue sidebar-mini">
 <header class="main-header">
     <!-- Logo -->
-    <a href="" class="logo">
+    <a href=" {{ url("admin/dashboard") }}" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>A</b>LT</span>
+        <span class="logo-mini"><b>IS</b>MART</span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>Is</b>mart</span>
+        <span class="logo-lg">
+            <b>Is</b>mart
+        </span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -150,10 +152,8 @@
 @yield('content')
 <footer class="main-footer">
     <div class="pull-right hidden-xs">
-        <b>Version</b> 2.4.0
     </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
-    reserved.
+    <strong>© Tống Văn Thanh | Trường Cao Đẳng Kỹ Thuật Cao Thắng</strong>
 </footer>
 
 <div class="control-sidebar-bg"></div>

@@ -5,7 +5,7 @@
         <section class="content-header">
             <h1>Quản lý bình luận</h1>
             <ol class="breadcrumb">
-                <li><a href="{{url('admin')}}"> Home</a></li>
+                <li><a href="{{url('admin/dashboard')}}"> Home</a></li>
                 <li><a href="{{ route('get.list.comment') }}"> Comment</a></li>
                 <li class="active">Index</li>
             </ol>

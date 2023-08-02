@@ -5,7 +5,7 @@
         <section class="content-header">
             <h1>Quản lý bài viết</h1>
             <ol class="breadcrumb">
-                <li><a href="{{url('admin')}}"> Home</a></li>
+                <li><a href="{{url('admin/dashboard')}}"> Home</a></li>
                 <li><a href="{{ route('get.list.post') }}"> Post</a></li>
                 <li class="active">Edit</li>
             </ol>

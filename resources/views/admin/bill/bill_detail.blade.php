@@ -60,7 +60,7 @@
         <section class="content-header">
             <h1>Quản lý chi tiết hóa đơn</h1>
             <ol class="breadcrumb">
-                <li><a href="{{url('admin')}}"> Home</a></li>
+                <li><a href="{{url('admin/dashboard')}}"> Home</a></li>
                 <li class="active">Index</li>
             </ol>
         </section>

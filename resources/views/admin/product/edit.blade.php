@@ -5,7 +5,7 @@
         <section class="content-header">
             <h1>Quản lý sản phẩm</h1>
             <ol class="breadcrumb">
-                <li><a href="{{url('admin')}}"> Home</a></li>
+                <li><a href="{{url('admin/dashboard')}}"> Home</a></li>
                 <li><a href="{{ route('get.list.product') }}"> Product</a></li>
                 <li class="active">Edit</li>
             </ol>
