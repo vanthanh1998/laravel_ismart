@@ -10,7 +10,7 @@ use Cart;
 use Illuminate\Support\MessageBag;
 use Validator;
 
-class DangNhapController extends Controller
+class LoginController extends Controller
 {
     public function getLogin(){
         return view('pages.user.login');

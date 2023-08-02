@@ -36,7 +36,6 @@
     <!-- SweetAlert2 -->
     <link rel="stylesheet" href="{!! url('admin/js/sweetalert/sweetalert2.min.css') !!}">
 
-
     <script src="{!! url('admin/js/sweetalert/sweetalert2.all.min.js') !!}"></script>
 
     <script src="{{ url('admin/js/jquery-2.2.4.min.js') }}" type="text/javascript"></script>

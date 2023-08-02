@@ -91,13 +91,13 @@ route::get('refresh_captcha','RegisterController@get_refresh')->name('get.refres
 
 Route::get('xac-nhan-tai-khoan','RegisterController@verify_account')->name('user.verify.account');
 
-Route::get('dang-nhap', 'DangNhapController@getLogin')->middleware('login')->name('dang-nhap');
-Route::post('dang-nhap', 'DangNhapController@postLogin');
+Route::get('dang-nhap', 'LoginController@getLogin')->middleware('login')->name('dang-nhap');
+Route::post('dang-nhap', 'LoginController@postLogin');
 
 Route::get('facebook-login','SocialController@redirectToProvider');
 Route::get('facebook-login-callback','SocialController@handleProviderCallback');
 
-Route::get('dang-xuat', 'DangNhapController@get_logout')->name('get.logout.all');
+Route::get('dang-xuat', 'LoginController@get_logout')->name('get.logout.all');
 
 //admin
 Route::group(['prefix'=>'admin','middleware'=>'CheckLoginAdmin'],function(){
