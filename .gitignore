@@ -1,6 +1,5 @@
 /node_modules
 /public/hot
-/public/storage
 /storage/*.key
 /vendor
 .env
@@ -9,4 +8,17 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-/.idea
+
+# Laravel 5 & Lumen specific
+public/storage
+public/hot
+storage/*.key
+storage/clockwork
+.env.*.php
+.env.php
+.env
+.env-production
+Homestead.yaml
+Homestead.json
+.phpunit.result.cache
+coverage/**

@@ -3,43 +3,78 @@
         <title>Trang đăng nhập</title>
 
         <link rel="stylesheet" type="text/css" href="<?php echo e(url('admin/css/import/login.css')); ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo e(url('admin/css/import/login_new.css')); ?>">
         <link href="<?php echo e(url('admin/css/bootstrap/bootstrap.min.css')); ?>" rel="stylesheet" type="text/css"/>
         <link href="<?php echo e(url('admin/css/bootstrap/bootstrap-theme.min.css')); ?>" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
         <script src="<?php echo e(url('admin/js/jquery-2.2.4.min.js')); ?>" type="text/javascript"></script>
         <script src="<?php echo e(url('admin/js/bootstrap/bootstrap.min.js')); ?>" type="text/javascript"></script>
+        <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="<?php echo url('admin/js/sweetalert/sweetalert2.min.css'); ?>">
+
+    <script src="<?php echo url('admin/js/sweetalert/sweetalert2.all.min.js'); ?>"></script>
     </head>
     <body>
-        <form id="login_admin_form" class="box" method="post">
-            <?php echo csrf_field(); ?>
-            <h1>Login</h1>
-            <input type="text" name="username" value="" id="username" placeholder="Tên đăng nhập">
-            <span class="error username_error" style="display: none"></span>
-            <input type="password" name="password" id="password" placeholder="Mật khẩu">
-            <span class="error password_error" style="display: none"></span>
-            <input type="submit" name="btn_login" id="btn_login" value="Login">
-            <div class="alert alert-danger error errorAll" style="display: none;">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                <p class="error errorAll" style="color: red;display: none"></p>
-            </div>
-        </form>
-        <div class="cms1-table">
-            <!-- start modal confirm success !-->
-            <div class="modal fade center-dialog-ie" id="confirm-success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h3 class="modal-title">Đăng nhập</h3>
-                        </div>
-                        <div class="modal-body">
-                            <p>Đăng nhập admin thành công</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button id="success" class="btn btn-success button-add-publisher" type="button" data-dismiss="modal">OK</button>
+        <div class="limiter">
+            <div class="container-login100">
+                <div class="wrap-login100">
+                    <div class="login100-pic js-tilt" data-tilt>
+                        <img src="<?php echo e(asset('images/admin-team.jpg')); ?>" alt="img">
+                    </div>
+                    <form class="login100-form validate-form" id="login_admin_form">
+                        <?php echo csrf_field(); ?>
+                        <span class="login100-form-title">
+                            <b>ĐĂNG NHẬP ISMART</b>
+                        </span>
+                        <form action="">
+                            <div class="wrap-input100 validate-input">
+                                <input class="input100" type="text" placeholder="Tên đăng nhập" name="username"
+                                    id="username">
+                                <span class="focus-input100"></span>
+                                <span class="symbol-input100">
+                                    <i class='bx bx-user'></i>
+                                </span>
+                            </div>
+                            <span class="error username_error" style="display: none"></span>
+                            <div class="wrap-input100 validate-input">
+                                <input autocomplete="off" class="input100" type="password" placeholder="Mật khẩu"
+                                    name="password" id="password">
+                                <span class="focus-input100"></span>
+                                <span class="symbol-input100">
+                                    <i class='bx bx-key'></i>
+                                </span>
+                            </div>
+                            <span class="error password_error" style="display: none"></span>
+    
+                            <div class="container-login100-form-btn">
+                                <input type="submit" name="btn_login" id="btn_login" value="Đăng nhập">
+                            </div>
+                            <br>
+                            <p class="error errorAll" style="color: red;display: none"></p>
+                        </form>
+                    </form>
+                </div>
+                <div class="cms1-table">
+                    <!-- start modal confirm success !-->
+                    <div class="modal fade center-dialog-ie" id="confirm-success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h3 class="modal-title">Đăng nhập</h3>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Đăng nhập admin thành công</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button id="success" class="btn btn-success button-add-publisher" type="button" data-dismiss="modal">OK</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <!-- end modal confirm delete !-->
                 </div>
             </div>
-            <!-- end modal confirm delete !-->
+            
         </div>
     </body>
 </html>
@@ -67,8 +102,12 @@
                             $('.errorAll').show().html(data.message.errorAll);
                         }
                     }else if (data.error === false){
-                        $('#confirm-success').modal('show');
-                        $('#confirm-success').on('shown.bs.modal',function(){
+                        swal({
+                            title: "Thành công",
+                            text: data.message,
+                            type: "success",
+                            timer: 2000
+                        }).then(function () {
                             window.location.href = "<?php echo e(route('get.admin')); ?>";
                         });
                     }
