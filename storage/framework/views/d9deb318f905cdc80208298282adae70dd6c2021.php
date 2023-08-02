@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>Trang đăng nhập</title>
+        <link rel="icon" href="<?php echo asset('images/iSmart.png'); ?>"/>
 
         <link rel="stylesheet" type="text/css" href="<?php echo e(url('admin/css/import/login.css')); ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo e(url('admin/css/import/login_new.css')); ?>">

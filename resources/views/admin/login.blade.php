@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>Trang đăng nhập</title>
+        <link rel="icon" href="{!! asset('images/iSmart.png') !!}"/>
 {{--        <meta name="csrf-token" content="{{ custom_csrf_token() }}">--}}
         <link rel="stylesheet" type="text/css" href="{{ url('admin/css/import/login.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ url('admin/css/import/login_new.css') }}">
