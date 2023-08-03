@@ -15,12 +15,12 @@
             </div>
         </div>
         @if(Session::has('success'))
-                <div class="alert alert-success">
+                <div class="alert alert-success" style="height: auto;">
                     {!! Session::get('success') !!}
                 </div>
             @endif
             @if(Session::has('danger'))
-                <div class="alert alert-danger">
+                <div class="alert alert-danger" style="height: auto;">
                     {!! Session::get('danger') !!}
                 </div>
             @endif

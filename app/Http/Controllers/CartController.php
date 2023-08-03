@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use http\Env;
 use Illuminate\Http\Request;
 use App\Cate_Product_Detail;
 use App\Cate_product;
@@ -122,7 +123,7 @@ class CartController extends Controller
                 // thông tin ngdung
                 $data['info'] = ['fullname'=> $request->fullname,'email'=>$request->email,'phone'=>$request->phone,'address'=>$request->address,'note'=>$request->note];
 
-                $email = $request->email;
+                $email = \env('MAIL_FROM_ADDRESS');
                 Mail::to($email)->send(new CheckoutEmail($data['info']));
                 Cart::destroy();
                 return response()->json([

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Cate_product;
 use App\Cate_Product_Detail;
+use App\Mail\ResetPasswordEmail;
 use App\Product;
 use App\User;
 use App\List_image;
@@ -407,10 +408,8 @@ class HomeController extends Controller
         $url = route('get.link.reset_password',['token'=>$checkUser->token,'email'=>$email ]);
         $data = ['route' => $url];
 
-        Mail::send('emails.reset_password',$data, function($message) use ($email){
-          $message->from('thanhchonthanh@gmail.com','ThanhRain');
-          $message->to($email,'Reset password')->subject('Lấy lại mật khẩu');
-        });
+        Mail::to($email)->send(new ResetPasswordEmail($data));
+
         return redirect()->back()->with('success','Link lấy lại đã được gửi vào email của bạn!');
     }
     public function resetPassword(Request $request){
