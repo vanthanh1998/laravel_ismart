@@ -73,7 +73,7 @@ class PostController extends Controller
     	$post->cate_post_id = $request->sltcate_post;
     	$post->featured_post = $request->featured_post;
     	// upload image
-    	$file->move('/upload/post/',$file_name);
+    	$file->move('upload/post/',$file_name);
     	$post->save();
     	return redirect()->route('get.list.post')->with('success','Thêm mới bài biết thành công');
     }
@@ -96,13 +96,13 @@ class PostController extends Controller
     	$post->cate_post_id = $request->sltcate_post;
     	$post->featured_post = $request->featured_post;
 
-    	$img_current = '/upload/post/'.$request->img_current;// tạo input hidden có name là img_current
+    	$img_current = 'upload/post/'.$request->img_current;// tạo input hidden có name là img_current
         // echo $img_current;// ~~ /upload/midu.jpg
         if(!empty($request->file('fimage'))){
             $file = $request->file('fimage'); // lấy file image
             $file_name = $file->getClientOriginalName();
             $post->image= $file_name;
-            $file ->move('/upload/post/',$file_name);
+            $file ->move('upload/post/',$file_name);
             if(File::exists($img_current)){
                 File::delete($img_current);
             }
@@ -114,7 +114,7 @@ class PostController extends Controller
     }
     public function get_delete($id){
         $post = Post::find($id);
-        File::delete('/upload/post/'.$post['image']);
+        File::delete('upload/post/'.$post['image']);
         $post->delete($id);
         return response()->json([
             'success' => true,
@@ -126,7 +126,7 @@ class PostController extends Controller
         $array = $request->input('id');
         $post = Post::whereIn('id', $array);
         foreach($post as $image){
-            File::delete('/upload/post/'.$image['image']);// xóa hình trong list_image
+            File::delete('upload/post/'.$image['image']);// xóa hình trong list_image
         }
         $post->delete();
         return response()->json([

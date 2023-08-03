@@ -45,12 +45,12 @@ class InfoCustomerController extends Controller
             $user->email = $request->user_email;
             $user->address = $request->user_address;
             $user->gender = $request->sltgender;
-            $img_current = '/upload/user/'.$request->img_current;// tạo input hidden có name là img_current~~~ nhu7 là thư mục chưa image
+            $img_current = 'upload/user/'.$request->img_current;// tạo input hidden có name là img_current~~~ nhu7 là thư mục chưa image
             if($request->hasFile('image')){
                 $file = $request->file('image'); // lấy file image
                 $file_name =$file->getClientOriginalName();
                 $user->avatar = $file_name;
-                $file->move('/upload/user/',$file_name);
+                $file->move('upload/user/',$file_name);
                 if(File::exists($img_current)){
                     File::delete($img_current);
                 }
