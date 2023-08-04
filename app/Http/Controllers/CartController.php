@@ -43,7 +43,6 @@ class CartController extends Controller
                 'options' => ['img' => $product->image,'qty_product' => $product->qty_product],
             ]);
             return redirect()->back();
-//            return response()->json($data);
         }
     }
 
@@ -123,7 +122,7 @@ class CartController extends Controller
                 // thông tin ngdung
                 $data['info'] = ['fullname'=> $request->fullname,'email'=>$request->email,'phone'=>$request->phone,'address'=>$request->address,'note'=>$request->note];
 
-                $email = \env('MAIL_FROM_ADDRESS');
+                $email = "foxrainsad@gmail.com";
                 Mail::to($email)->send(new CheckoutEmail($data['info']));
                 Cart::destroy();
                 return response()->json([
