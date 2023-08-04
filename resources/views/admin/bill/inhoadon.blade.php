@@ -105,7 +105,7 @@ font-size: 18px;
 
 						<h3 style="text-align:center;margin-top:50px">Cảm ơn bạn <br> Đã chọn mua sản phẩm cửa hàng của chúng tôi!</h3>
 						<div class="back" style="text-align:center">
-							<a style="color: red;" href="{!! route('get.list.thanhtoan') !!}" title="" >Trở về</a>
+							<a style="color: red;" href="{{ route('get.bill_detail', ['id' => $id]) }}" title="" >Trở về</a>
 						</div>
 					</div>
 			</form>

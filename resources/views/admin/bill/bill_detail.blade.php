@@ -122,10 +122,17 @@
                                 </table>
                             </div>
                         </div><br>
-                        <div class="section" style="float: left">
+                        <div class="form-group" style="float: left">
                             <a class="btn btn-info" href="{{ route('get.list.bill') }}">Quay lại</a>
                         </div>
-                        <div class="section" style="float: right;font-size: 20px;font-weight: 300">
+                        <div class="form-group" style="float: right">
+                            @if($check_print_bill->status != 4)
+                                <div class="fl-right">
+                                    <a href="{!! route('get.inhoadon',$item['bill_id']) !!}"><i class="fa fa-print" aria-hidden="true" style="color:black;margin-right:5px"> Print</i></a>
+                                </div>
+                            @endif
+                        </div>
+                        <div class="form-group" style="float: right;font-size: 20px;font-weight: 300">
                             <div class="section-detail">
                                 <p class="btn btn-xs btn-success">Tổng số lượng:</p> <span style="font-size: 18px;font-weight: bold;">{{ $total_qty }} sản phẩm</span><br>
                                 <p class="btn btn-xs btn-success">Tổng đơn hàng:</p> <span style="font-size: 18px;font-weight: bold;">{!! number_format($total_price,0,",",",") !!} đ</span>
